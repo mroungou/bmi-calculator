@@ -1,1 +1,267 @@
-/*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: "Inter";
+  src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+  font-weight: 100 1000;
+}
+body {
+  font-family: "Inter";
+  margin: 0;
+}
+
+.hero {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.about {
+  padding: 0 1.5rem;
+  background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  text-align: center;
+  border-radius: 0 0 35px 35px;
+  padding-bottom: 12rem;
+}
+.about .logo {
+  padding: 2rem 0;
+}
+.about h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%;
+  margin: 0;
+  color: hsl(215, 31%, 21%);
+}
+.about p {
+  margin: 0;
+  padding-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 150%;
+  color: 215, 17%, 45%;
+  font-weight: 400;
+}
+
+.measurement {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  padding: 1.5rem 3rem;
+}
+
+.calculator {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  box-sizing: border-box;
+  margin: 0 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+.calculator h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.calculator .form-control {
+  display: grid;
+  grid-template-columns: 1rem auto;
+  gap: 1.125rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+.calculator .inputs {
+  display: grid;
+}
+.calculator .inputs label {
+  font-size: 0.875rem;
+  color: #5E6E85;
+  padding-bottom: 0.5rem;
+}
+.calculator .inputs input {
+  border: 3px solid hsl(200, 24%, 88%);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.35rem;
+  background: hsl(0, 0%, 100%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  outline: none;
+}
+.calculator .inputbox {
+  display: grid;
+}
+.calculator .inputbox input, .calculator .inputbox span {
+  grid-area: 1/2;
+}
+.calculator .inputbox span {
+  color: hsl(227, 92%, 58%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: auto 1.5rem auto auto;
+}
+.calculator input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calculated-score {
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  padding: 2rem;
+}
+.calculated-score .header {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+.calculated-score .bmi {
+  display: block;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%;
+  padding-bottom: 2rem;
+}
+.calculated-score p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+.calculated-score p .range {
+  font-weight: 700;
+}
+
+.result-about img {
+  width: 100%;
+  box-sizing: border-box;
+}
+.result-about h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 110%;
+  color: hsl(215, 31%, 21%);
+}
+.result-about p {
+  font-size: 1rem;
+  color: 215, 17%, 45%;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.about-bmi {
+  display: grid;
+  background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  margin-top: 4.45rem;
+  padding-top: 3.5rem;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+}
+.about-bmi .eating h3,
+.about-bmi .exercise h3,
+.about-bmi .sleep h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(215, 31%, 21%);
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+.about-bmi .eating P,
+.about-bmi .exercise P,
+.about-bmi .sleep P {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  padding-bottom: 2.5rem;
+}
+.about-bmi .eating img,
+.about-bmi .exercise img,
+.about-bmi .sleep img {
+  padding-bottom: 2rem;
+}
+.about-bmi .sleep {
+  padding-bottom: 1rem;
+}
+
+.limitations-bmi h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: hsl(215, 31%, 21%);
+}
+.limitations-bmi p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+.limitations-bmi .components {
+  display: grid;
+  row-gap: 1rem;
+}
+.limitations-bmi .components .test1 {
+  display: flex;
+  justify-content: left;
+}
+.limitations-bmi .components h4 {
+  font-size: 1.25rem;
+  color: hsl(215, 31%, 21%);
+  font-weight: 600;
+  letter-spacing: -0.0625rem;
+  margin: auto auto auto 1rem;
+}
+.limitations-bmi .components p {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+.limitations-bmi .components .gender,
+.limitations-bmi .components .age,
+.limitations-bmi .components .muscle, .limitations-bmi .components .preg, .limitations-bmi .components .race {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: hsl(200, 24%, 88%);
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0.15rem solid hsl(200, 24%, 88%);
+  border-radius: 50%;
+  transform: translate(-0.075rem);
+  display: grid;
+  place-content: center;
+}
+
+input[type=radio]:hover {
+  border: 0.15rem solid hsl(227, 92%, 58%);
+}
+
+input[type=radio]::before {
+  content: "";
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border: 0.5rem solid hsla(227, 92%, 58%, 0.15);
+  box-shadow: inset 1rem 1rem hsl(227, 92%, 58%);
+}
+
+input[type=radio]:checked::before {
+  transform: scale(1);
+}
+
+.imperial {
+  display: none !important;
+}/*# sourceMappingURL=main.css.map */

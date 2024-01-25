@@ -5,4 +5,287 @@ $gunMetal: hsl(215, 31%, 21%);
 $darkElectricBlue: (215, 17%, 45%);
 $borders: hsl(200, 24%, 88%);
 $pureWhite: hsl(0, 0%, 100%);
+$borders: hsl(200, 24%, 88%);
 
+@font-face {
+    font-family: 'Inter';
+    src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+    font-weight: 100 1000;
+}
+
+@mixin aboutBMI {
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $gunMetal;
+        margin: 0;
+        padding-bottom: 1.5rem;
+    }
+    P{
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+        margin: 0;
+        padding-bottom: 2.5rem;
+    }
+    img {
+        padding-bottom: 2rem;
+    }
+}
+
+body {
+    font-family: 'Inter';
+    margin: 0;
+}
+
+.hero {
+    // display: grid;
+    // position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.about {
+    padding: 0 1.5rem;
+    background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%);
+    text-align: center;
+    border-radius: 0 0 35px 35px;
+    padding-bottom: 12rem;
+    .logo {
+        padding: 2rem 0;
+    }
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 110%;
+        margin: 0;
+        color: $gunMetal;
+    }
+    p {
+        margin: 0;
+        padding-top: 1.5rem;
+        font-size: 1rem;
+        line-height: 150%;
+        color: $darkElectricBlue;
+        font-weight: 400;
+    }
+}
+// radio buttons for imperial or metric
+.measurement {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 1.5rem;
+    padding: 1.5rem 3rem;
+}
+
+.calculator {
+    background: $pureWhite;
+    box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+    box-sizing: border-box;
+    margin: 0 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .form-control {
+        display: grid;
+        grid-template-columns: 1rem auto;
+        gap: 1.125rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 150%;
+    }
+    .inputs {
+        display: grid;
+        label {
+            font-size: .875rem;
+            color: #5E6E85;
+            padding-bottom: .5rem;
+        }
+        input {
+            border: 3px solid $borders;
+            border-radius: .75rem;
+            padding: 1.25rem 1.35rem;
+            background: $pureWhite;
+            font-size: 1.5rem;
+            font-weight: 600;
+            outline: none;
+        }
+    }
+
+    .inputbox {
+        display: grid;
+        input, span {
+            grid-area: 1/2;
+        }
+    }
+    .inputbox span {
+        color: $blue;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: auto 1.5rem auto auto;
+    }
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.calculated-score {
+    color: $pureWhite;
+    background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    .header {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 150%;
+    }
+    .bmi {
+        display: block;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 110%;
+        padding-bottom: 2rem;
+    }
+    p {
+        margin: 0;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 150%;
+        .range {
+            font-weight: 700;
+        }
+    }
+}
+
+.result-about {
+    img {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 110%;
+        color: $gunMetal;
+    }
+    p {
+        font-size: 1rem;
+        color: $darkElectricBlue;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
+
+.about-bmi {
+    display: grid;
+    background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%);
+    margin-top: 4.45rem;
+    padding-top: 3.5rem;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    .eating, 
+    .exercise, 
+    .sleep {
+       @include aboutBMI();
+    }
+
+    .sleep {
+        padding-bottom: 1rem;
+    }
+}
+
+.limitations-bmi {
+    h3 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $gunMetal;
+    }
+    p {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    .components {
+        display: grid;
+        row-gap: 1rem;
+      .test1 {
+        display: flex;
+        justify-content: left;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        color: $gunMetal;
+        font-weight: 600;
+        letter-spacing: -0.0625rem;
+        margin: auto auto auto 1rem;
+      }
+
+      p {
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+      }
+      .gender, 
+      .age, 
+      .muscle, .preg, .race {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: $pureWhite;
+        box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+      }
+    }
+
+}
+
+// styling the radio buttons
+input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: $borders;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 0.15rem solid $borders;
+    border-radius: 50%;
+    transform: translate(-.075rem);
+    // for the checked state
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]:hover {
+    border: 0.15rem solid $blue
+}
+
+input[type="radio"]::before {
+    content: '';
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    border: .5rem solid hsla(227, 92%, 58%, 0.15);
+    box-shadow: inset 1rem 1rem $blue;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.imperial {
+    display: none !important;
+}
