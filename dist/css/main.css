@@ -2,4 +2,205 @@
   font-family: "Inter";
   src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
   font-weight: 100 1000;
+}
+body {
+  font-family: "Inter";
+  margin: 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1.5rem 0;
+  background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  border-radius: 0rem 0rem 2.1875rem 2.1875rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%;
+  color: hsl(215, 31%, 21%);
+}
+.hero p {
+  font-size: 1rem;
+  color: hsl(215, 17%, 45%);
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.calculator {
+  border-radius: 1rem;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  margin-left: 1.5rem;
+  margin-right: 1.44rem;
+  padding: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(215, 31%, 21%);
+}
+
+.controls {
+  color: hsl(215, 31%, 21%);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.inputs {
+  display: grid;
+  position: relative;
+}
+
+.inputs input, .metric {
+  grid-area: 2/1;
+}
+
+.metric {
+  font-size: 1.5rem;
+  color: hsl(227, 92%, 58%);
+  font-weight: 600;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1.5rem;
+}
+
+.inputs input {
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid hsl(200, 24%, 88%);
+  border-radius: 0.75rem;
+  background: hsl(0, 0%, 100%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(215, 31%, 21%);
+  outline: none;
+}
+
+.results {
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.results .suspense {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+.results .score {
+  display: block;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%;
+}
+.results p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+.results .range {
+  font-weight: 700;
+}
+
+.about-result {
+  margin-top: 4.5rem;
+}
+.about-result img {
+  box-sizing: border-box;
+  width: 100%;
+}
+.about-result h3 {
+  font-size: 2rem;
+  color: hsl(215, 31%, 21%);
+  font-weight: 600;
+  line-height: 110%;
+  padding-left: 1.5rem;
+  padding-right: 1.44rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+.about-result p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  color: hsl(215, 17%, 45%);
+  padding-left: 1.5rem;
+  padding-right: 1.44rem;
+}
+
+.bmi-factors {
+  background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  display: grid;
+  row-gap: 2.5rem;
+  margin-top: 4.48rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  padding-left: 1.19rem;
+  padding-right: 1.81rem;
+}
+.bmi-factors h4 {
+  color: hsl(215, 31%, 21%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1.5rem 0;
+}
+.bmi-factors p {
+  color: hsl(215, 17%, 45%);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.limitations {
+  margin-top: 4.5rem;
+  margin-left: 1.19rem;
+  margin-right: 1.81rem;
+}
+.limitations h4 {
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(215, 31%, 21%);
+  font-weight: 600;
+}
+.limitations p {
+  text-align: center;
+  font-size: 1rem;
+  color: hsl(215, 17%, 45%);
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.limitations-components {
+  display: grid;
+  row-gap: 2rem;
+  margin-top: 3.5rem;
+}
+.limitations-components h5 {
+  color: hsl(215, 31%, 21%);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+.limitations-components p {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  color: hsl(215, 17%, 45%);
+}
+.limitations-components .nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.limitations-components .component {
+  border-radius: 1rem;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  padding: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

@@ -12,3 +12,222 @@ $borders: hsl(200, 24%, 88%);
     src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
     font-weight: 100 1000;
 }
+
+body {
+    font-family: 'Inter';
+    margin: 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem 1.5rem 0;
+    background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%);
+    border-radius: 0rem 0rem 2.1875rem 2.1875rem;
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 110%;
+        color: $gunMetal;
+    }
+    
+    p {
+        font-size: 1rem;
+        color: $darkElectricBlue;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
+
+.calculator {
+    border-radius: 1rem;
+    background: $pureWhite;
+    box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+    margin-left: 1.5rem;
+    margin-right: 1.44rem;
+    padding: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $gunMetal;
+}
+
+.controls {
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    // gap: 1.5rem;
+    color: $gunMetal;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.inputs {
+    display: grid;
+    position: relative;
+}
+
+.inputs input, .metric {
+    grid-area: 2/1;
+}
+
+.metric {
+    font-size: 1.5rem;
+    color: $blue;
+    font-weight: 600;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1.5rem;
+}
+
+.inputs input {
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $borders;
+    border-radius: .75rem;
+    background: $pureWhite;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $gunMetal;
+    outline: none;
+}
+
+.results {
+    color: $pureWhite;
+    background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    .suspense {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 150%;
+    }
+    
+    .score {
+        display: block;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 110%;
+    }
+
+    p {
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    .range {
+        font-weight: 700;
+    }
+}
+
+.about-result {
+    margin-top: 4.5rem;
+    img {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 2rem;
+        color: $gunMetal;
+        font-weight: 600;
+        line-height: 110%;
+        padding-left: 1.5rem;
+        padding-right: 1.44rem;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+        color: $darkElectricBlue;
+        padding-left: 1.5rem;
+        padding-right: 1.44rem;
+    }
+}
+
+.bmi-factors {
+    background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%);
+    display: grid;
+    row-gap: 2.5rem;
+    margin-top: 4.48rem;
+    h4 {
+        color: $gunMetal;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 2rem 0 1.5rem 0;
+    }
+
+    p {
+        color: $darkElectricBlue;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+    }
+    
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-left: 1.19rem;
+    padding-right: 1.81rem;
+}
+
+.limitations {
+    margin-top: 4.5rem;
+    margin-left: 1.19rem;
+    margin-right: 1.81rem;
+    h4 {
+        text-align: center;
+        font-size: 2rem;
+        color: $gunMetal;
+        font-weight: 600;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1rem;
+        color: $darkElectricBlue;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
+
+.limitations-components {
+    display: grid;
+    row-gap: 2rem;
+    margin-top: 3.5rem;
+    h5 {
+        color: $gunMetal;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    p {
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+        color: $darkElectricBlue;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .component {
+        border-radius: 1rem;
+        background: $pureWhite;
+        box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+        padding: 1.5rem;
+    }
+}
