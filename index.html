@@ -9,44 +9,70 @@
   <title>Frontend Mentor | Body Mass Index Calculator</title>
 </head>
 <body>
-  <div class="hero">
-    <img src="./assets/images/logo.svg" alt="">
-    <h1>Body Mass Index Calculator</h1>
-    <p>
-      Better understand your weight in relation to your height using our
-      body mass index (BM) calculator. While BMI is not the sole determinant
-      of a healthy weight, it offers a valuable starting point to evaluate
-      your overall health and well-being.
-    </p>
-  </div>
-
-  <form action="" class="calculator">
-    <h2>Enter your details below</h2>
-    <div class="controls">
-      <input type="radio" name="measurement" checked>Metric</input>
-      <input type="radio" name="measurement">Imperial</input>
-    </div>
-    <span class="label">Height</span>
-    <div class="height-input inputs">
-      <input type="number" name="" id="">
-      <span class="cm metric">cm</span>
-    </div>
-    <span class="label">Weight</span>
-    <div class="weight-input inputs">
-      <input type="number" name="" id="">
-      <span class="kg metric">kg</span>
-    </div>
-    <div class="results">
-      <span class="suspense">Your BMI is...</span>
-      <!-- add score -->
-      <span class="score" id="score">23.4</span>
+  <div class="header">
+    <div class="hero">
+      <img src="./assets/images/logo.svg" alt="">
+      <h1>Body Mass Index Calculator</h1>
       <p>
-        Your BMI suggests you're <span class="classification">a healthy weight</span><!-- add classification -->.
-        Your ideal weight is between <span class="range">63.2kgs - 85.2kgs</span> <!-- add range -->.
+        Better understand your weight in relation to your height using our
+        body mass index (BM) calculator. While BMI is not the sole determinant
+        of a healthy weight, it offers a valuable starting point to evaluate
+        your overall health and well-being.
       </p>
     </div>
-  </form>
-
+    <form action="" class="calculator">
+      <h2>Enter your details below</h2>
+      <div class="controls">
+        <label class="form-control">
+          <input type="radio" name="radio" id="metric" checked>
+          Metric
+        </label>
+        <label class="form-control">
+          <input type="radio" name="radio" id="imperial">
+          Imperial
+        </label>
+      </div>
+      <span class="label">Height</span>
+      <div class="height-input inputs metric-sys">
+        <input type="number" name="" id="">
+        <span class="cm metric">cm</span>
+      </div>
+      <div class="height-imperial imperial-sys">
+        <div class="height-input inputs">
+          <input type="number" name="" id="">
+          <span class="ft imperial">ft</span>
+        </div>
+        <div class="height-input inputs">
+          <input type="number" name="" id="">
+          <span class="in imperial">in</span>
+        </div>
+      </div>
+      <span class="label">Weight</span>
+      <div class="weight-input inputs metric-sys">
+        <input type="number" name="" id="">
+        <span class="kg metric">kg</span>
+      </div>
+      <div class="weight-imperial imperial-sys">
+        <div class="weight-input inputs">
+          <input type="number" name="" id="">
+          <span class="st imperial">st</span>
+        </div>
+        <div class="weight-input inputs">
+          <input type="number" name="" id="">
+          <span class="lbs imperial">lbs</span>
+        </div>
+      </div>
+      <div class="results">
+        <span class="suspense">Your BMI is...</span>
+        <!-- add score -->
+        <span class="score" id="score">23.4</span>
+        <p>
+          Your BMI suggests you're <span class="classification">a healthy weight</span><!-- add classification -->.
+          Your ideal weight is between <span class="range">63.2kgs - 85.2kgs</span> <!-- add range -->.
+        </p>
+      </div>
+    </form>
+  </div>
   <div class="about-result">
     <img src="./assets/images/image-man-eating.webp" alt="">
     <h3>What your BMI result means</h3>
