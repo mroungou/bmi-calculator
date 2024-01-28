@@ -44,6 +44,8 @@ body {
   margin-left: 1.5rem;
   margin-right: 1.44rem;
   padding: 1.5rem;
+  position: absolute;
+  top: 520px;
 }
 
 h2 {
@@ -155,7 +157,7 @@ span.label {
 }
 
 .about-result {
-  margin-top: 4.5rem;
+  margin-top: 31rem;
 }
 .about-result img {
   box-sizing: border-box;
