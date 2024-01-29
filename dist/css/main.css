@@ -5,6 +5,7 @@
 }
 body {
   font-family: "Inter";
+  font-family: "Inter", sans-serif;
   margin: 0;
 }
 
@@ -209,6 +210,7 @@ span.label {
   margin-top: 4.5rem;
   margin-left: 1.19rem;
   margin-right: 1.81rem;
+  padding-bottom: 6rem;
 }
 .limitations h4 {
   text-align: center;
@@ -252,4 +254,12 @@ span.label {
   background: hsl(0, 0%, 100%);
   box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
   padding: 1.5rem;
+}
+
+.visible {
+  display: grid !important;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
