@@ -9,6 +9,10 @@ const metricInputsDiv = document.getElementsByClassName('metric-sys');
 const weightKG = document.getElementById('weight-kg');
 const heightCM = document.getElementById('height-cm');
 
+// welcome and results div
+const welcomeDiv = document.getElementById('welcome');
+const resultsDiv = document.getElementById('results')
+
 // input values for imperial
 const weightStones = document.getElementById('weight-st');
 const weightLBS = document.getElementById('weight-lbs');
@@ -16,7 +20,7 @@ const heightFT = document.getElementById('height-ft');
 const heightIN = document.getElementById('height-in');
 
 const BMIScore = document.getElementById('score');
-let BMI
+let currentBMI
 
 // calculating BMI
 function calculateBMIMetric() {
@@ -24,9 +28,9 @@ function calculateBMIMetric() {
     const heightValue = parseFloat(heightCM.value);
     // span element that contains the number
 
-    BMI = (weightValue / heightValue ** 2) * 10000;
-    const BMIRounded = BMI.toFixed(1)
-    BMIScore.innerText = BMIRounded;
+    currentBMI = (weightValue / heightValue ** 2) * 10000;
+    const currentBMIRounded = currentBMI.toFixed(1)
+    BMIScore.innerText = currentBMIRounded;
 }
 
 function calculateBMIImperial () {
@@ -35,12 +39,12 @@ function calculateBMIImperial () {
     const heightFTValue = parseFloat(heightFT.value);
     const heightINValue = parseFloat(heightIN.value);
 
-    const totalWeight = (weightStonesValue * 14) + weightLBSValue
-    const totalHeight = (heightFTValue * 12) + heightINValue
+    const totalWeight = (weightStonesValue * 14) + weightLBSValue;
+    const totalHeight = (heightFTValue * 12) + heightINValue;
 
-    BMI = (totalWeight / totalHeight ** 2) * 703
-    const BMIRounded = BMI.toFixed(1)
-    BMIScore.innerText = BMIRounded
+    currentBMI = (totalWeight / totalHeight ** 2) * 703;
+    const currentBMIRounded = currentBMI.toFixed(1);
+    BMIScore.innerText = currentBMIRounded;
 }
 
 function displayMetric() {

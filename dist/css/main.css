@@ -262,4 +262,89 @@ span.label {
 
 .hidden {
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-right: 2.44rem;
+    padding-left: 2.69rem;
+  }
+  h1 span.tablet {
+    display: block;
+  }
+  .calculator {
+    padding: 2rem;
+    margin-left: 2.69rem;
+    margin-right: 2.44rem;
+    top: 380px;
+  }
+  .test {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+  .results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    border-radius: 1rem 62.4375rem 62.4375rem 1rem;
+  }
+  .results .score {
+    padding-top: 0.5rem;
+  }
+  .about-result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    margin-top: 24rem;
+  }
+  .about-result h3 {
+    margin-top: 1rem;
+  }
+  .about-result p {
+    margin-bottom: 0;
+  }
+  .bmi-factors {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+    padding-left: 2.44rem;
+    padding-right: 2.69rem;
+  }
+  .bmi-factors img {
+    margin: auto;
+  }
+  .bmi-factors h4 {
+    margin: 0 0 1.5rem 0;
+  }
+  .bmi-factors p {
+    margin: 0;
+  }
+  .eating, .exercise, .sleep {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+  .limitations {
+    margin-left: 2.44rem;
+    margin-right: 2.69rem;
+  }
+  .limitations-components {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "gender age" "muscle preg" "race race";
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .limitations-components .component {
+    padding: 2rem;
+  }
+  .limitations-components .race {
+    grid-area: race;
+    width: 53%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }/*# sourceMappingURL=main.css.map */
