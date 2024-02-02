@@ -4,14 +4,14 @@ const metricButton = document.getElementById('metric');
 const imperialButton = document.getElementById('imperial');
 // inputs divs
 const ImperialInputsDiv = document.getElementsByClassName('imperial-sys');
-const metricInputsDiv = document.getElementsByClassName('metric-sys');
+const metricInputsDiv = document.getElementsByClassName('metric-input');
 // input values for metric
 const weightKG = document.getElementById('weight-kg');
 const heightCM = document.getElementById('height-cm');
 
 // welcome and results div
-const welcomeDiv = document.getElementById('welcome');
-const resultsDiv = document.getElementById('results')
+const welcomeMessageDiv = document.getElementById('welcome');
+const resultsCalculatedDiv = document.getElementById('results')
 
 // input values for imperial
 const weightStones = document.getElementById('weight-st');
@@ -20,7 +20,7 @@ const heightFT = document.getElementById('height-ft');
 const heightIN = document.getElementById('height-in');
 
 const BMIScore = document.getElementById('score');
-let currentBMI
+let currentBMI;
 
 // calculating BMI
 function calculateBMIMetric() {
@@ -28,7 +28,7 @@ function calculateBMIMetric() {
     const heightValue = parseFloat(heightCM.value);
     // span element that contains the number
 
-    currentBMI = (weightValue / heightValue ** 2) * 10000;
+    currentBMI = (weightValue / (heightValue / 100) ** 2);
     const currentBMIRounded = currentBMI.toFixed(1)
     BMIScore.innerText = currentBMIRounded;
 }
@@ -45,6 +45,16 @@ function calculateBMIImperial () {
     currentBMI = (totalWeight / totalHeight ** 2) * 703;
     const currentBMIRounded = currentBMI.toFixed(1);
     BMIScore.innerText = currentBMIRounded;
+}
+
+function calculateIdealWeight() {
+    const heightValue = parseFloat(heightCM.value);
+    const rangeDiv = document.getElementById('range');
+
+    const lowerBouundKG = Math.round((18.5 * (heightValue / 100) ** 2) * 10) / 10;
+    const upperBoundKG = Math.round((24.9 * (heightValue / 100)** 2) * 10) /10;
+
+    rangeDiv.innerText = `${lowerBouundKG}kgs - ${upperBoundKG}kgs`;
 }
 
 function displayMetric() {
@@ -65,17 +75,28 @@ function displayImperial() {
             ImperialInputsDiv[i].classList.add('visible');
         }
         for (let i = 0; i < metricInputsDiv.length; i++) {
-            metricInputsDiv[i].classList.add('hidden');
             metricInputsDiv[i].classList.remove('visible');
+            metricInputsDiv[i].classList.add('hidden');
         }
     }
+}
+
+function displayResults() {
+    welcomeMessageDiv.classList.add('hidden');
+    resultsCalculatedDiv.classList.add('visible');
+}
+
+function performCalculations() {
+    calculateBMIMetric()
+    calculateIdealWeight()
+    displayResults()
 }
 
 imperialButton.addEventListener('click', displayImperial);
 metricButton.addEventListener('click', displayMetric);
 
-weightKG.addEventListener('keyup', calculateBMIMetric);
-heightCM.addEventListener('keyup', calculateBMIMetric);
+weightKG.addEventListener('keyup', performCalculations);
+heightCM.addEventListener('keyup', performCalculations);
 
 weightStones.addEventListener('keyup', calculateBMIImperial)
 weightLBS.addEventListener('keyup', calculateBMIImperial)
