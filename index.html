@@ -35,46 +35,54 @@
         </label>
       </div>
       <div class="test">
-        <div class="height-metric metric-input">
-          <span class="label">Height</span>
-          <div class="height-input inputs metric-sys">
-            <input type="number" name="" id="height-cm" placeholder="0">
-            <span class="cm metric">cm</span>
+        <div class="test4">
+          <div class="height-metric metric-input">
+            <span class="label">Height</span>
+            <div class="height-input inputs metric-sys">
+              <input type="number" name="" id="height-cm" placeholder="0">
+              <span class="cm metric">cm</span>
+            </div>
+          </div>
+          <div class="weight-metric metric-input">
+            <span class="label">Weight</span>
+            <div class="weight-input inputs metric-sys">
+              <input type="number" name="" id="weight-kg" placeholder="0">
+              <span class="kg metric">kg</span>
+            </div>
           </div>
         </div>
-        <div class="height-imperial imperial-sys">
-          <span class="label">Height</span>
-          <div class="height-input inputs">
-            <input type="number" name="" id="height-ft" placeholder="0">
-            <span class="ft imperial">ft</span>
+        <div class="test3">
+          <div class="height-imperial imperial-sys">
+            <span class="label">Height</span>
+            <div class="test2">
+              <div class="height-input inputs">
+                <input type="number" name="" id="height-ft" placeholder="0">
+                <span class="ft imperial">ft</span>
+              </div>
+              <div class="height-input inputs">
+                <input type="number" name="" id="height-in" placeholder="0">
+                <span class="in imperial">in</span>
+              </div>
+            </div>
           </div>
-          <div class="height-input inputs">
-            <input type="number" name="" id="height-in" placeholder="0">
-            <span class="in imperial">in</span>
-          </div>
-        </div>
-        <div class="weight-metric metric-input">
-          <span class="label">Weight</span>
-          <div class="weight-input inputs metric-sys">
-            <input type="number" name="" id="weight-kg" placeholder="0">
-            <span class="kg metric">kg</span>
-          </div>
-        </div>
-        <div class="weight-imperial imperial-sys">
-          <span class="label">Weight</span>
-          <div class="weight-input inputs">
-            <input type="number" name="" id="weight-st" placeholder="0">
-            <span class="st imperial">st</span>
-          </div>
-          <div class="weight-input inputs">
-            <input type="number" name="" id="weight-lbs" placeholder="0">
-            <span class="lbs imperial">lbs</span>
+          <div class="weight-imperial imperial-sys">
+            <span class="label">Weight</span>
+            <div class="test2">
+              <div class="weight-input inputs">
+                <input type="number" name="" id="weight-st" placeholder="0">
+                <span class="st imperial">st</span>
+              </div>
+              <div class="weight-input inputs">
+                <input type="number" name="" id="weight-lbs" placeholder="0">
+                <span class="lbs imperial">lbs</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="results" id="results">
-        <div class="bmi-calculated-results">
-          <div class="bmi-calc">
+        <div class="bmi-calculated-results" id="bmi-calculated-results">
+          <div class="bmi-calc" id="bmi-calc">
             <div class="column1">
               <span class="suspense">Your BMI is...</span>
               <!-- add score -->
@@ -82,7 +90,7 @@
             </div>
             <div class="column2">
               <p>
-                Your BMI suggests you're <span class="classification">a healthy weight</span><!-- add classification -->.
+                Your BMI suggests you're <span class="classification" id="classification"></span><!-- add classification -->.
                 Your ideal weight is between <span class="range" id="range"></span> <!-- add range -->.
               </p>
             </div>

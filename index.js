@@ -11,7 +11,7 @@ const heightCM = document.getElementById('height-cm');
 
 // welcome and results div
 const welcomeMessageDiv = document.getElementById('welcome');
-const resultsCalculatedDiv = document.getElementById('results')
+const resultsCalculatedDiv = document.getElementById('bmi-calculated-results')
 
 // input values for imperial
 const weightStones = document.getElementById('weight-st');
@@ -21,44 +21,171 @@ const heightIN = document.getElementById('height-in');
 
 const BMIScore = document.getElementById('score');
 let currentBMI;
+const classification = document.getElementById('classification')
 
+function BMIClassification(BMI) {
+    if (BMI < 18.5) {
+        classification.innerText = 'underweight'
+    } else if (BMI >= 25 && BMI < 30) {
+        classification.innerText = 'overweight'
+    } else if (BMI >= 30) {
+        classification.innerText = 'obese'
+    } else {
+        classification.innerText = 'a healthy weight'
+    }
+}
 // calculating BMI
-function calculateBMIMetric() {
-    const weightValue = parseFloat(weightKG.value);
-    const heightValue = parseFloat(heightCM.value);
-    // span element that contains the number
+// function calculateBMIMetric() {
+//     const weightValue = parseFloat(weightKG.value);
+//     const heightValue = parseFloat(heightCM.value);
+//     // span element that contains the number
 
-    currentBMI = (weightValue / (heightValue / 100) ** 2);
-    const currentBMIRounded = currentBMI.toFixed(1)
-    BMIScore.innerText = currentBMIRounded;
+//     currentBMI = (weightValue / (heightValue / 100) ** 2);
+//     const currentBMIRounded = currentBMI.toFixed(1)
+//     BMIScore.innerText = currentBMIRounded;
+//     BMIClassification(currentBMIRounded)
+// }
+
+function calculateBMI() {
+    if (metricButton.checked) {
+        const weightValue = parseFloat(weightKG.value);
+        const heightValue = parseFloat(heightCM.value);
+        // span element that contains the number
+
+        currentBMI = (weightValue / (heightValue / 100) ** 2);
+        const currentBMIRounded = currentBMI.toFixed(1)
+        BMIScore.innerText = currentBMIRounded;
+        BMIClassification(currentBMIRounded)
+    } else if (imperialButton.checked) {
+        const weightLBSValue = parseFloat(weightLBS.value);
+        const weightStonesValue = parseFloat(weightStones.value);
+        const heightFTValue = parseFloat(heightFT.value);
+        const heightINValue = parseFloat(heightIN.value);
+
+        const totalWeight = (weightStonesValue * 14) + weightLBSValue;
+        const totalHeight = (heightFTValue * 12) + heightINValue;
+
+        currentBMI = (totalWeight / totalHeight ** 2) * 703;
+        const currentBMIRounded = currentBMI.toFixed(1);
+        BMIScore.innerText = currentBMIRounded;
+        BMIClassification(currentBMIRounded)
+    }
 }
 
-function calculateBMIImperial () {
-    const weightLBSValue = parseFloat(weightLBS.value);
-    const weightStonesValue = parseFloat(weightStones.value);
-    const heightFTValue = parseFloat(heightFT.value);
-    const heightINValue = parseFloat(heightIN.value);
 
-    const totalWeight = (weightStonesValue * 14) + weightLBSValue;
-    const totalHeight = (heightFTValue * 12) + heightINValue;
+// function calculateBMIImperial () {
+//     const weightLBSValue = parseFloat(weightLBS.value);
+//     const weightStonesValue = parseFloat(weightStones.value);
+//     const heightFTValue = parseFloat(heightFT.value);
+//     const heightINValue = parseFloat(heightIN.value);
 
-    currentBMI = (totalWeight / totalHeight ** 2) * 703;
-    const currentBMIRounded = currentBMI.toFixed(1);
-    BMIScore.innerText = currentBMIRounded;
-}
+//     const totalWeight = (weightStonesValue * 14) + weightLBSValue;
+//     const totalHeight = (heightFTValue * 12) + heightINValue;
+
+//     currentBMI = (totalWeight / totalHeight ** 2) * 703;
+//     const currentBMIRounded = currentBMI.toFixed(1);
+//     BMIScore.innerText = currentBMIRounded;
+//     BMIClassification(currentBMIRounded)
+// }
+
+// function calculateIdealWeightMetric() {
+//     if (metricButton.checked == true) {
+//         const heightValue = parseFloat(heightCM.value);
+//         const rangeDiv = document.getElementById('range');
+    
+//         const lowerBoundKG = Math.round((18.5 * (heightValue / 100) ** 2) * 10) / 10;
+//         const upperBoundKG = Math.round((24.9 * (heightValue / 100)** 2) * 10) /10;
+    
+//         rangeDiv.innerText = `${lowerBoundKG}kgs - ${upperBoundKG}kgs`;
+//     }
+// }
+
+// function calculateIdealWeightImperial() {
+//     if (imperialButton.checked == true) {
+//         const rangeDiv = document.getElementById('range');
+    
+//         const heightFTValue = parseFloat(heightFT.value)
+//         const heightINValue = parseFloat(heightIN.value)
+    
+//         const totalHeight = (heightFTValue * 12) + heightINValue;
+    
+//         const lowerBound = (18.5 * (totalHeight ** 2)) / 703;
+//         const upperBound = (24.9 * (totalHeight ** 2)) / 703;
+    
+//         const lowerBoundStones = Math.floor(lowerBound / 14);
+//         const lowerBoundLBS = Math.round(lowerBound % 14)
+    
+//         const upperBoundStones = Math.floor(upperBound / 14);
+//         const upperBoundLBS = Math.round(upperBound % 14)
+    
+//         rangeDiv.innerText = `${lowerBoundStones}st ${lowerBoundLBS}lbs - ${upperBoundStones}st ${upperBoundLBS}lbs`;
+//     }
+// }
 
 function calculateIdealWeight() {
-    const heightValue = parseFloat(heightCM.value);
-    const rangeDiv = document.getElementById('range');
-
-    const lowerBouundKG = Math.round((18.5 * (heightValue / 100) ** 2) * 10) / 10;
-    const upperBoundKG = Math.round((24.9 * (heightValue / 100)** 2) * 10) /10;
-
-    rangeDiv.innerText = `${lowerBouundKG}kgs - ${upperBoundKG}kgs`;
+    if (imperialButton.checked) {
+        const rangeDiv = document.getElementById('range');
+    
+        const heightFTValue = parseFloat(heightFT.value)
+        const heightINValue = parseFloat(heightIN.value)
+    
+        const totalHeight = (heightFTValue * 12) + heightINValue;
+    
+        const lowerBound = (18.5 * (totalHeight ** 2)) / 703;
+        const upperBound = (24.9 * (totalHeight ** 2)) / 703;
+    
+        const lowerBoundStones = Math.floor(lowerBound / 14);
+        const lowerBoundLBS = Math.round(lowerBound % 14)
+    
+        const upperBoundStones = Math.floor(upperBound / 14);
+        const upperBoundLBS = Math.round(upperBound % 14)
+    
+        rangeDiv.innerText = `${lowerBoundStones}st ${lowerBoundLBS}lbs - ${upperBoundStones}st ${upperBoundLBS}lbs`;
+    } else if (metricButton.checked) {
+        const heightValue = parseFloat(heightCM.value);
+        const rangeDiv = document.getElementById('range');
+    
+        const lowerBoundKG = Math.round((18.5 * (heightValue / 100) ** 2) * 10) / 10;
+        const upperBoundKG = Math.round((24.9 * (heightValue / 100)** 2) * 10) /10;
+    
+        rangeDiv.innerText = `${lowerBoundKG}kgs - ${upperBoundKG}kgs`;
+    }
 }
 
-function displayMetric() {
-    if (metricButton.checked == true) { //need to review this, may be useless
+// function displayMetric() {
+//     if (metricButton.checked == true) { //need to review this, may be useless
+//         for (let i = 0; i < metricInputsDiv.length; i++) {
+//             metricInputsDiv[i].classList.add('visible');
+//         }
+//         for (let i = 0; i < ImperialInputsDiv.length; i++) {
+//             ImperialInputsDiv[i].classList.remove('visible')
+//             ImperialInputsDiv[i].classList.add('hidden')
+//         }
+//     }
+// }
+
+// function displayImperial() {
+//     if (imperialButton.checked == true) { //need to review this, may be useless
+//         for (let i = 0; i < ImperialInputsDiv.length; i++) {
+//             ImperialInputsDiv[i].classList.add('visible');
+//         }
+//         for (let i = 0; i < metricInputsDiv.length; i++) {
+//             metricInputsDiv[i].classList.remove('visible');
+//             metricInputsDiv[i].classList.add('hidden');
+//         }
+//     }
+// }
+
+function displaySystemInputs() {
+    if (imperialButton.checked) {
+        for (let i = 0; i < ImperialInputsDiv.length; i++) {
+            ImperialInputsDiv[i].classList.add('visible');
+        }
+        for (let i = 0; i < metricInputsDiv.length; i++) {
+            metricInputsDiv[i].classList.remove('visible');
+            metricInputsDiv[i].classList.add('hidden');
+        }
+    } else if (metricButton.checked) {
         for (let i = 0; i < metricInputsDiv.length; i++) {
             metricInputsDiv[i].classList.add('visible');
         }
@@ -69,36 +196,28 @@ function displayMetric() {
     }
 }
 
-function displayImperial() {
-    if (imperialButton.checked == true) { //need to review this, may be useless
-        for (let i = 0; i < ImperialInputsDiv.length; i++) {
-            ImperialInputsDiv[i].classList.add('visible');
-        }
-        for (let i = 0; i < metricInputsDiv.length; i++) {
-            metricInputsDiv[i].classList.remove('visible');
-            metricInputsDiv[i].classList.add('hidden');
-        }
-    }
-}
-
 function displayResults() {
     welcomeMessageDiv.classList.add('hidden');
     resultsCalculatedDiv.classList.add('visible');
 }
 
 function performCalculations() {
-    calculateBMIMetric()
-    calculateIdealWeight()
     displayResults()
+    // calculateBMIMetric()
+    // calculateBMIImperial()
+    calculateBMI()
+    // calculateIdealWeightMetric()
+    // calculateIdealWeightImperial()
+    calculateIdealWeight()
 }
 
-imperialButton.addEventListener('click', displayImperial);
-metricButton.addEventListener('click', displayMetric);
+imperialButton.addEventListener('click', displaySystemInputs);
+metricButton.addEventListener('click', displaySystemInputs);
 
 weightKG.addEventListener('keyup', performCalculations);
 heightCM.addEventListener('keyup', performCalculations);
 
-weightStones.addEventListener('keyup', calculateBMIImperial)
-weightLBS.addEventListener('keyup', calculateBMIImperial)
-heightFT.addEventListener('keyup', calculateBMIImperial)
-heightIN.addEventListener('keyup', calculateBMIImperial)
+weightStones.addEventListener('keyup', performCalculations)
+weightLBS.addEventListener('keyup', performCalculations)
+heightFT.addEventListener('keyup', performCalculations)
+heightIN.addEventListener('keyup', performCalculations)
