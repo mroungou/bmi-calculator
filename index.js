@@ -35,17 +35,6 @@ function BMIClassification(BMI) {
     }
 }
 // calculating BMI
-// function calculateBMIMetric() {
-//     const weightValue = parseFloat(weightKG.value);
-//     const heightValue = parseFloat(heightCM.value);
-//     // span element that contains the number
-
-//     currentBMI = (weightValue / (heightValue / 100) ** 2);
-//     const currentBMIRounded = currentBMI.toFixed(1)
-//     BMIScore.innerText = currentBMIRounded;
-//     BMIClassification(currentBMIRounded)
-// }
-
 function calculateBMI() {
     if (metricButton.checked) {
         const weightValue = parseFloat(weightKG.value);
@@ -71,56 +60,6 @@ function calculateBMI() {
         BMIClassification(currentBMIRounded)
     }
 }
-
-
-// function calculateBMIImperial () {
-//     const weightLBSValue = parseFloat(weightLBS.value);
-//     const weightStonesValue = parseFloat(weightStones.value);
-//     const heightFTValue = parseFloat(heightFT.value);
-//     const heightINValue = parseFloat(heightIN.value);
-
-//     const totalWeight = (weightStonesValue * 14) + weightLBSValue;
-//     const totalHeight = (heightFTValue * 12) + heightINValue;
-
-//     currentBMI = (totalWeight / totalHeight ** 2) * 703;
-//     const currentBMIRounded = currentBMI.toFixed(1);
-//     BMIScore.innerText = currentBMIRounded;
-//     BMIClassification(currentBMIRounded)
-// }
-
-// function calculateIdealWeightMetric() {
-//     if (metricButton.checked == true) {
-//         const heightValue = parseFloat(heightCM.value);
-//         const rangeDiv = document.getElementById('range');
-    
-//         const lowerBoundKG = Math.round((18.5 * (heightValue / 100) ** 2) * 10) / 10;
-//         const upperBoundKG = Math.round((24.9 * (heightValue / 100)** 2) * 10) /10;
-    
-//         rangeDiv.innerText = `${lowerBoundKG}kgs - ${upperBoundKG}kgs`;
-//     }
-// }
-
-// function calculateIdealWeightImperial() {
-//     if (imperialButton.checked == true) {
-//         const rangeDiv = document.getElementById('range');
-    
-//         const heightFTValue = parseFloat(heightFT.value)
-//         const heightINValue = parseFloat(heightIN.value)
-    
-//         const totalHeight = (heightFTValue * 12) + heightINValue;
-    
-//         const lowerBound = (18.5 * (totalHeight ** 2)) / 703;
-//         const upperBound = (24.9 * (totalHeight ** 2)) / 703;
-    
-//         const lowerBoundStones = Math.floor(lowerBound / 14);
-//         const lowerBoundLBS = Math.round(lowerBound % 14)
-    
-//         const upperBoundStones = Math.floor(upperBound / 14);
-//         const upperBoundLBS = Math.round(upperBound % 14)
-    
-//         rangeDiv.innerText = `${lowerBoundStones}st ${lowerBoundLBS}lbs - ${upperBoundStones}st ${upperBoundLBS}lbs`;
-//     }
-// }
 
 function calculateIdealWeight() {
     if (imperialButton.checked) {
@@ -152,30 +91,6 @@ function calculateIdealWeight() {
     }
 }
 
-// function displayMetric() {
-//     if (metricButton.checked == true) { //need to review this, may be useless
-//         for (let i = 0; i < metricInputsDiv.length; i++) {
-//             metricInputsDiv[i].classList.add('visible');
-//         }
-//         for (let i = 0; i < ImperialInputsDiv.length; i++) {
-//             ImperialInputsDiv[i].classList.remove('visible')
-//             ImperialInputsDiv[i].classList.add('hidden')
-//         }
-//     }
-// }
-
-// function displayImperial() {
-//     if (imperialButton.checked == true) { //need to review this, may be useless
-//         for (let i = 0; i < ImperialInputsDiv.length; i++) {
-//             ImperialInputsDiv[i].classList.add('visible');
-//         }
-//         for (let i = 0; i < metricInputsDiv.length; i++) {
-//             metricInputsDiv[i].classList.remove('visible');
-//             metricInputsDiv[i].classList.add('hidden');
-//         }
-//     }
-// }
-
 function displaySystemInputs() {
     if (imperialButton.checked) {
         for (let i = 0; i < ImperialInputsDiv.length; i++) {
@@ -203,11 +118,7 @@ function displayResults() {
 
 function performCalculations() {
     displayResults()
-    // calculateBMIMetric()
-    // calculateBMIImperial()
     calculateBMI()
-    // calculateIdealWeightMetric()
-    // calculateIdealWeightImperial()
     calculateIdealWeight()
 }
 
