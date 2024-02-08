@@ -197,10 +197,16 @@ input[type="number"] {
     column-gap: 1rem;
 }
 
-.test2 {
+.imperial-inputs {
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 1.5rem
+}
+
+.error {
+    font-size: .75rem;
+    color: hsl(0, 100%, 74%);
+    margin-top: .5rem;
 }
 
 
@@ -372,13 +378,8 @@ input[type="number"] {
         margin-right: 2.44rem;
         top: 380px;
     }
-    // .test {
-    //     display: grid;
-    //     grid-template-columns: repeat(2, auto);
-    //     column-gap: 1.5rem;
-    // }
 
-    .test4 {
+    .metric-input-div {
         display: grid;
         grid-template-columns: repeat(2, auto);
         column-gap: 1.5rem;

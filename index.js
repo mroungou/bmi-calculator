@@ -36,11 +36,17 @@ function BMIClassification(BMI) {
 }
 // calculating BMI
 function calculateBMI() {
+    const errorMessageDiv = document.getElementById('error')
+    errorMessageDiv.innerText = '';
     if (metricButton.checked) {
         const weightValue = parseFloat(weightKG.value);
         const heightValue = parseFloat(heightCM.value);
         // span element that contains the number
 
+        if (isNaN(weightValue) || isNaN(heightValue)) {
+            errorMessageDiv.innerText = 'Please enter valid inputs';
+            return;
+        }
         currentBMI = (weightValue / (heightValue / 100) ** 2);
         const currentBMIRounded = currentBMI.toFixed(1)
         BMIScore.innerText = currentBMIRounded;
@@ -53,6 +59,11 @@ function calculateBMI() {
 
         const totalWeight = (weightStonesValue * 14) + weightLBSValue;
         const totalHeight = (heightFTValue * 12) + heightINValue;
+
+        if (isNaN(weightLBSValue) || isNaN(weightStonesValue) || isNaN(heightFTValue) || isNaN(heightINValue)) {
+            errorMessageDiv.innerText = 'Please enter all fields';
+            return;
+        }
 
         currentBMI = (totalWeight / totalHeight ** 2) * 703;
         const currentBMIRounded = currentBMI.toFixed(1);
