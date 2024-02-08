@@ -10,7 +10,9 @@
 ## Please do not remove line 12 - thanks! 🙂 ##
 ###############################################
 *.xd
-*.md
+info.md
+preview.jpg
+bmi-calculator-figma
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
 .prettierignore
